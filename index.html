@@ -71,7 +71,7 @@
                 rgba(255, 255, 255, 0.2) 80%,
                 rgba(255, 255, 255, 0) 100%
             );
-            z-index: 100;
+            z-index: 90;
         }
         .fa, .fab, .fas {
             font-family: "Font Awesome 6 Free" !important;
@@ -315,6 +315,10 @@
         AOS.init();
     </script>
     <script>
+        AOS.init({
+            once: true
+        });
+
         const bg_images = [
             'url("images/david-edelstein-N4DbvTUDikw-unsplash.jpg")',
             'url("images/andrea-cau-nV7GJmSq3zc-unsplash.jpg")',
