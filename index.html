@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Docum ient</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+        body{
+            font-family: "Open Sans",sans-serif;
+            margin: 0;
+            color: white;
+        }
+        .home-page{
+            background-position: center, center -100px;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: background-image 2s ease-in-out;
+        }
+        .home-gradasi-bg{
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.1));
+        }
+        .home-teks{
+            font-family: "Montserrat", sans-serif;
+            z-index: 2;
+            font-size: clamp(1rem,7vw,3.75rem);
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+        }
+        .home-bgtxt{
+            position: absolute;
+            z-index: 1;
+            font-family: "Montserrat",sans-serif;
+            font-size: clamp(4.8rem,24vw,15rem);
+            opacity: 0.25;
+        }
+        .home-btn{
+            z-index: 2;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+            font-size: clamp(0.8rem,2.5vw,1.6rem);
+        }
+        .home-btn:hover{
+            background-color: #e0a800;
+        }
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: lighter;
+            font-family: "Open Sans",sans-serif;
+        }
+        .navbar-brand{
+            font-family: "Montserrat",sans-serif;
+        }
+        .home-page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.9) 20%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0.2) 80%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            z-index: 100;
+        }
+        .fa, .fab, .fas {
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fab {
+            font-family: "Font Awesome 6 Brands" !important;
+            display: flex;
+        }
+        .home-konten-btn-teks{
+            font-family: "Open Sans",sans-serif;
+            font-weight: 450;
+        }
+
+
+        .why-choose-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-family: "Montserrat",sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #17a2b8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-circle i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .feature-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .home-bgtxt.aos-animate{
+            opacity: 0.25 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar bg-body-tertiary fixed-top d-md-none bg-opacity-10 position-fixed w-100">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-semibold" href="#">
+                <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                DIAMANTE STUDIO
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <a class="navbar-brand text-dark fw-semibold" href="#">
+                    <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    DIAMANTE STUDIO
+                </a>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Dante Sauza</a></li>
+                    <li><a class="dropdown-item" href="#">Azhar Lubis</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">DIAMANTE STUDIO</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-warning" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary position-fixed w-100 bg-opacity-10 d-none d-md-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-semibold" href="#">
+                <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                DIAMANTE STUDIO
+            </a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 bg-black border-black border-opacity-25 bg-opacity-25 text-white" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-warning text-light d-md-inline-block d-none" type="submit">Search</button>
+          </form>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Dante Sauza</a></li>
+                  <li><a class="dropdown-item" href="#">Azhar Lubis</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">DIAMANTE STUDIO</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled text-light" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="home-page">
+        <div class="home-gradasi-bg w-100">
+            <div class="home-konten d-flex justify-content-center vh-100 align-items-center flex-column w-100">
+                <h1 class="home-bgtxt fw-bold" data-aos="fade-in" data-aos-offset="0" data-aos-easing="ease-in" data-aos-delay="2000" data-aos-duration="1500">WORLD</h1>
+                <div class="home-teks text-center fw-semibold"><div data-aos="fade-down" class="d-inline-block" data-aos-duration="2000">MENIKMATI</div> <div class="d-inline-block" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="200">SETIAP</div><BR><div class="d-inline-block" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="400">SUDUT</div><div class="d-inline-block" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="600">DUNIA</div></div>
+                <button class="home-btn btn btn-warning py-lg-2 py-md-2 px-lg-4 px-md-4 fab fa-whatsapp text-white mt-lg-3 mb-lg-3" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="2000"><div class="home-konten-btn-teks">Book Now</div></button>
+            </div>
+        </div>
+    </div>    
+    
+
+
+
+
+
+
+
+
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-aos="zoom-out" data-aos-duration="2000" data-aos-anchor-placement="bottom-bottom">Why Choose Us?</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="0">
+                        <div class="icon-circle bg-warning">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h3 class="feature-title">Cepat</h3>
+                        <p class="feature-description">Layanan terjemahan dokumen profesional dengan akurasi tinggi untuk berbagai jenis dokumen resmi dan bisnis</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="200">
+                        <div class="icon-circle bg-warning">
+                            <i class="bi bi-cash-stack"></i>
+                        </div>
+                        <h3 class="feature-title">Value for Money</h3>
+                        <p class="feature-description">Harga yang kompetitif dengan kualitas terjemahan terbaik, memberikan nilai maksimal untuk investasi Anda</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="400">
+                        <div class="icon-circle bg-warning">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 Services</h3>
+                        <p class="feature-description">Layanan cepat dengan opsi penyelesaian dalam 24 jam untuk kebutuhan mendesak Anda</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="600">
+                        <div class="icon-circle bg-warning">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="feature-title">Terpercaya & Trust</h3>
+                        <p class="feature-description">Dipercaya oleh ribuan klien dengan track record yang solid dan komitmen terhadap kepuasan pelanggan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const bg_images = [
+            'url("images/david-edelstein-N4DbvTUDikw-unsplash.jpg")',
+            'url("images/andrea-cau-nV7GJmSq3zc-unsplash.jpg")',
+            'url("images/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg")',
+            'url("images/hugo-villegas-gJiG3zJZmr8-unsplash.jpg")',
+            'url("images/florian-wehde-milUxSbp4_A-unsplash.jpg")'
+        ]
+        const bg_halaman_utama = document.querySelector(".home-page")
+
+        let counter = 0
+        function gantiBGhome(){
+            counter = (counter+1)%bg_images.length
+            bg_halaman_utama.style.backgroundImage = bg_images[counter]
+        }
+        gantiBGhome()
+        setInterval(gantiBGhome, 3500)
+    </script>
+</body>
+</html>
