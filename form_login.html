@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('images/kapal_lawut.jpg') no-repeat center center/cover;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      min-height: 100vh;
+    }
+
+    .form-bungkus {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      max-width: 750px;
+      width: 100%;
+    }
+
+    .title-box {
+      background-color: #ffc107;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      width: 33px;
+      max-width: 40px;
+      border-radius: 50%;
+      border: #fff solid 1px;
+      height: auto;
+    }
+
+    .nama {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .title-box h3 {
+      margin: 0;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .form-isi {
+      padding: 2rem 3rem;
+    }
+
+    .daftar {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .daftar a {
+      color: #ffc107;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .daftar a:hover {
+      text-decoration: underline;
+    }
+    .tombol:hover{
+      background-color: #e0a800  !important;
+    }
+
+    @media (max-width: 576px) {
+      .col-left {
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+    <div class="form-bungkus">
+      <div class="title-box d-flex flex-column flex-md-row align-items-center justify-content-between">
+
+        <div class="col-left d-flex align-items-center gap-2 justify-content-md-start justify-content-center mb-2 mb-md-0">
+          <img src="images/logo.png" alt="Logo Beyond Travel" class="logo img-fluid">
+          <span class="nama">Beyond Travel</span>
+        </div>
+        
+        <div class="col-center flex-grow-1 d-flex justify-content-center">
+          <h3>Sign In</h3>
+        </div>
+        
+        <div class="col-right d-none d-md-flex" style="width: 137px;"></div>
+      </div>
+
+      <div class="form-isi">
+        <form id="form_login">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              placeholder="Enter your email" 
+              required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password" 
+              placeholder="Enter your password" 
+              required>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 text-white fw-bold tombol">Sign In</button>
+        </form>
+
+        <div class="daftar">
+          <p>Don't have an account? <a href="form_daftar.html">Sign Up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('form_login');
+    form.addEventListener('submit', (klik) => {
+      klik.preventDefault();
+      form.reset();
+    });
+    /* document.getElementById('form_login').addEventListener('submit', function(klik) {
+      klik.preventDefault();
+      this.reset();
+    }); */
+  </script>
+</body>
+</html>

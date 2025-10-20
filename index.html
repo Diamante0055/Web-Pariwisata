@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Docum ient</title>
+    <title>BEYOND TRAVEL</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
@@ -63,6 +63,7 @@
         .navbar{
             z-index: 1000;
         }
+        
         .home-page::after {
             content: '';
             position: absolute;
@@ -162,7 +163,7 @@
         }
 
         .card-gmbr {
-            background-image: linear-gradient( /* Kakat anying gradient tai*/
+            background-image: linear-gradient(
                 rgba(255, 255, 255, 1),
                 rgba(255, 255, 255, 0.6),
                 rgba(255, 255, 255, 0.4),
@@ -201,16 +202,113 @@
             font-weight: bold;
             color: #333;
         }
+
+        .footerr {
+            background-color: #fff;
+            border-top: 1px solid #ffc107;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .footerr h5,
+        .footerr h6 {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .footerr .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1.8px solid #ffc107;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffc107;
+            transition: all 0.3s ease;
+        }
+
+        .footerr .social-icon:hover {
+            background-color: #ffc107;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footerr .hover-warning:hover {
+            color: #ffc107 !important;
+            transition: color 0.2s ease;
+        }
+        .btn-kuning{
+            color: white !important;
+            font-family: "Open Sans",sans-serif;
+        }
+        .btn-kuning:hover{
+            background-color: #e0a800;
+        }
+
         
     </style>
 </head>
 <body>
 
-    <nav class="navbar bg-body-tertiary fixed-top d-md-none bg-opacity-10 position-fixed w-100">
+    <div class="modal fade" id="bookingModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    <h5 class="modal-title fw-bold text-light" style="font-family: 'Montserrat', sans-serif;">BEYOND TRAVEL</h5>
+                    <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">No. Telepon</label>
+                            <input type="tel" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tempat Asal</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tempat Tujuan</label>
+                            <select class="form-select">
+                                <option>Rome</option>
+                                <option>Machu Picchu</option>
+                                <option>Fuji Mountain</option>
+                                <option>Eiffel Tower</option>
+                                <option>Bali</option>
+                                <option>Taj Mahal</option>
+                                <option>Grand Canyon</option>
+                                <option>Santorini</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tanggal Keberangkatan</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jumlah Anggota</label>
+                            <input type="number" class="form-control" value="1">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger btn-book-batal" data-bs-dismiss="modal">Batal</button>
+                    <button class="btn btn-warning btn-kuning">Pesan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="navbar bg-body-tertiary fixed-top d-md-none bg-opacity-10 position-fixed w-100" id="navvv">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-semibold" href="#">
                 <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                DIAMANTE STUDIO
+                BEYOND TRAVEL
             </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -219,7 +317,7 @@
             <div class="offcanvas-header">
                 <a class="navbar-brand text-dark fw-semibold" href="#">
                     <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                    DIAMANTE STUDIO
+                    BEYOND TRAVEL
                 </a>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -229,7 +327,10 @@
                   <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link text-dark" href="form_daftar.html" target="_blank">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="form_login.html" target="_blank">Sign In</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -241,7 +342,7 @@
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">DIAMANTE STUDIO</a></li>
+                    <li><a class="dropdown-item" href="#">BEYOND TRAVEL</a></li>
                   </ul>
                 </li>
               </ul>
@@ -260,7 +361,7 @@
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-semibold" href="#">
                 <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                DIAMANTE STUDIO
+                BEYOND TRAVEL
             </a>
           <form class="d-flex" role="search">
             <input class="form-control me-2 bg-black border-black border-opacity-25 bg-opacity-25 text-white" type="search" placeholder="Search" aria-label="Search"/>
@@ -274,9 +375,6 @@
               <li class="nav-item">
                 <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">Link</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -289,7 +387,10 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled text-light" aria-disabled="true">Disabled</a>
+                <a class="nav-link text-light" href="form_daftar.html" target="_blank">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="form_login.html" target="_blank">Sign In</a>
               </li>
             </ul>
           </div>
@@ -299,7 +400,7 @@
 
 
 
-    <section class="home-page">
+    <section class="home-page" id="home-page">
         <div class="home-gradasi-bg w-100">
             <div class="home-konten d-flex justify-content-center vh-100 align-items-center flex-column w-100">
                 
@@ -328,7 +429,7 @@
     </section>
     
     
-    <section class="why-choose-pg">
+    <section class="why-choose-pg" id="why-choose">
         <div class="container">
             <div class="why-choose-title">
                 <div data-aos="zoom-out" data-aos-duration="2000" data-aos-anchor-placement="bottom-bottom">
@@ -389,7 +490,7 @@
     </section>
 
 
-    <div class="card-gmbr">
+    <div class="card-gmbr" id="destinasi">
         <section class="card-gmbr container py-5 mt-5 mb-0">
             <div class="card-judul mb-5" style="text-align: center;">
                 <div data-aos="zoom-out" data-aos-duration="2000" data-aos-anchor-placement="bottom-bottom">
@@ -406,7 +507,9 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Rome</h5>
                                 <p class="card-text flex-grow-1">Rome is the Eternal City where ancient Roman ruins, Renaissance masterpieces, and vibrant modern Italian life converge in a living museum that has served as the heart of Western civilization for nearly three millennia.<hr><strong>Rp. 7.999.000</strong></p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -421,7 +524,9 @@
                                 <p class="card-text flex-grow-1">
                                         The Eiffel Tower is located in Paris, France, on the Champ de Mars park in the city's 7th arrondissement, at the address 5 Avenue Anatole France.<hr><strong>Rp. 999.000</strong>
                                 </p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -434,7 +539,9 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Fuji Mountain</h5>
                                 <p class="card-text flex-grow-1">Mount Fuji is a towering, iconic volcano located on the island of Honshu, Japan, straddling the prefectures of Yamanashi and Shizuoka.<hr><strong>Rp. 2.300.000</strong></p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -443,13 +550,15 @@
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
                     <div data-aos="fade-up-left" data-aos-anchor-placement="center-bottom">
                         <div class="card h-100 shadow-sm border-0 flex-fill">
-                            <img src="images/eddie-kiszka-rFESpq5MMTg-unsplash.jpg" class="card-img-top" alt="Eiffel tower image">
+                            <img src="images/eddie-kiszka-rFESpq5MMTg-unsplash.jpg" class="card-img-top" alt="Mahcu Picchu image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Machu Picchu</h5>
                                 <p class="card-text flex-grow-1">
                                     Machu Picchu is a breathtaking 15th-century Inca citadel perched high in the Peruvian Andes, featuring remarkable stone architecture that blends seamlessly with dramatic mountain peaks and clouds, making it one of the world's most iconic archaeological wonders.<hr><strong>Rp. 1.270.000</strong>
                                 </p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -465,11 +574,13 @@
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
                     <div data-aos="fade-up-right" data-aos-anchor-placement="center-bottom">
                         <div class="card h-100 shadow-sm  border-0 flex-fill">
-                            <img src="images/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" class="card-img-top" alt="Fuji Mountain image">
+                            <img src="images/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" class="card-img-top" alt="Bali image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Bali</h5>
                                 <p class="card-text flex-grow-1">Bali is Indonesia's enchanting "Island of the Gods" where emerald rice terraces, ancient Hindu temples, pristine beaches, and a rich artistic culture combine with warm Balinese hospitality to create a tropical paradise that captivates millions of visitors each year.<hr><strong>Rp. 899.000</strong></p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -478,13 +589,15 @@
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
                     <div data-aos="fade-up-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200">
                         <div class="card h-100  border-0 shadow-sm flex-fill">
-                            <img src="images/jovyn-chamb-iWMfiInivp4-unsplash.jpg" class="card-img-top" alt="Eiffel tower image">
+                            <img src="images/jovyn-chamb-iWMfiInivp4-unsplash.jpg" class="card-img-top" alt="Taj Mahal image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Taj Mahal</h5>
                                 <p class="card-text flex-grow-1">
                                     The Taj Mahal is a stunning white marble mausoleum built by Mughal Emperor Shah Jahan in the 17th century as an eternal monument of love for his wife Mumtaz Mahal, renowned worldwide for its perfect symmetry, intricate craftsmanship, and ethereal beauty that changes with the light of day.<hr><strong>Rp. 1.000.000</strong>
                                 </p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -493,11 +606,13 @@
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
                     <div data-aos="fade-up-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400">
                         <div class="card h-100 border-0 shadow-sm flex-fill">
-                            <img src="images/omer-nezih-gerek-ZZnH4GOzDgc-unsplash.jpg" class="card-img-top" alt="Fuji Mountain image">
+                            <img src="images/omer-nezih-gerek-ZZnH4GOzDgc-unsplash.jpg" class="card-img-top" alt="Grand Canyon image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Grand Canyon</h5>
                                 <p class="card-text flex-grow-1">The Grand Canyon is a massive geological marvel carved by the Colorado River over millions of years, stretching 277 miles long and up to a mile deep, revealing stunning layers of colorful rock formations that tell Earth's ancient history and offer some of the most awe-inspiring vistas in the world.<hr><strong>Rp. 799.000</strong></p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -506,13 +621,15 @@
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
                     <div data-aos="fade-up-right" data-aos-anchor-placement="center-bottom" data-aos-delay="600">
                         <div class="card h-100 border-0 shadow-sm flex-fill">
-                            <img src="images/heidi-kaden-kYxgm42SQso-unsplash.jpg" class="card-img-top" alt="Eiffel tower image">
+                            <img src="images/heidi-kaden-kYxgm42SQso-unsplash.jpg" class="card-img-top" alt="Santorini image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Santorini</h5>
                                 <p class="card-text flex-grow-1">
                                     Santorini is a stunning volcanic island in the Aegean Sea famous for its dramatic cliffside villages with whitewashed buildings and blue-domed churches, spectacular sunsets over the caldera, and breathtaking views that make it one of Greece's most romantic and photographed destinations.<hr><strong>Rp. 732.000</strong>
                                 </p>
-                                <a href="#" class="btn btn-warning text-light mt-auto card-btn">Book Now</a>
+                                <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -521,6 +638,52 @@
             </div>
         </section>
     </div>
+
+    <footer class="footerr text-dark pt-5 pb-3">
+        <div class="container">
+            <div class="row gy-4">
+      
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold text-warning mb-3">
+                    <img src="images/logo.png" alt="Logo" width="35" class="me-2">BEYOND TRAVEL</h5>
+                    <p class="text-secondary">Nikmati pengalaman wisata terbaik bersama kami dan jelajahi dunia dengan kenyamanan dan kepercayaan penuh.</p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-semibold mb-3 text-warning">Menu</h6>
+                    <ul class="list-unstyled">
+                    <li><a href="#home-page" class="text-dark text-decoration-none hover-warning d-block py-1">Home</a></li>
+                    <li><a href="#destinasi" class="text-dark text-decoration-none hover-warning d-block py-1">Destinasi</a></li>
+                    <li><a href="#why-choose" class="text-dark text-decoration-none hover-warning d-block py-1">Why Choose Us?</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-semibold mb-3 text-warning">Kontak Kami</h6>
+                    <p class="mb-1"><i class="bi bi-geo-alt text-warning me-2"></i> Lampung, Indonesia</p>
+                    <p class="mb-1"><i class="bi bi-envelope text-warning me-2"></i> info@beyondtravel.id</p>
+                    <p><i class="bi bi-phone text-warning me-2"></i> +62 888 8888 8888</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-semibold mb-3 text-warning">Ikuti Kami</h6>
+                    <div class="d-flex gap-3">
+                        <a href="https://web.facebook.com/login/device-based/regular/login/?login_attempt=1&locale=id_ID&_rdc=1&_rdr#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4 border-warning opacity-75">
+
+            <div class="text-center text-secondary small">
+                © 2025 <span class="text-warning fw-semibold">BEYOND TRAVEL</span>. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
     
 
 
@@ -536,6 +699,9 @@
             startEvent: 'load'
         });
 
+       
+       
+        
         const bg_images = [
             'url("images/david-edelstein-N4DbvTUDikw-unsplash.jpg")',
             'url("images/andrea-cau-nV7GJmSq3zc-unsplash.jpg")',
