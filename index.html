@@ -63,6 +63,43 @@
         .navbar{
             z-index: 1000;
         }
+
+        
+        #navvv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: -1;
+            background: rgba(10, 10, 10, 0.2);
+        }
+
+        .navbar.navbar-expand-lg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: -1;
+            background: rgba(10, 10, 10, 0.2);
+        }
+
+
+        #offcanvasNavbar {
+            z-index: 1050;
+        }
+
+        
+        .dropdown-menu {
+            z-index: 1050;
+        }
         
         .home-page::after {
             content: '';
@@ -243,7 +280,7 @@
         .btn-kuning:hover{
             background-color: #e0a800;
         }
-
+        
         
     </style>
 </head>
@@ -260,19 +297,19 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Nama Lengkap</label>
+                            <label class="form-label">Full Name</label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">No. Telepon</label>
+                            <label class="form-label">Phone Number</label>
                             <input type="tel" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Tempat Asal</label>
+                            <label class="form-label">Departure City</label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Tempat Tujuan</label>
+                            <label class="form-label">Destination</label>
                             <select class="form-select">
                                 <option>Rome</option>
                                 <option>Machu Picchu</option>
@@ -285,18 +322,18 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Tanggal Keberangkatan</label>
+                            <label class="form-label">Departure Date</label>
                             <input type="date" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Jumlah Anggota</label>
+                            <label class="form-label">Number of Travelers</label>
                             <input type="number" class="form-control" value="1">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger btn-book-batal" data-bs-dismiss="modal">Batal</button>
-                    <button class="btn btn-warning btn-kuning">Pesan</button>
+                    <button class="btn btn-danger btn-book-batal" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-warning btn-kuning">Book</button>
                 </div>
             </div>
         </div>
@@ -411,11 +448,13 @@
                 </h1>
     
                 <div class="home-teks text-center fw-semibold">
-                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000">MENIKMATI</span> 
-                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="200">SETIAP</span>
+                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000">ENJOYING</span> 
+                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="200">EVERY</span>
                     <br>
-                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="400">SUDUT</span>
-                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="600">DUNIA</span>
+                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="400">CORNER</span>
+                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="600">OF</span>
+                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="800">THE</span>
+                    <span data-aos="fade-down" class="d-inline-block" data-aos-duration="2000" data-aos-delay="1000">WORLD</span>
                 </div>
     
                 <div data-aos="fade-up" data-aos-delay="1200" data-aos-duration="2000">
@@ -446,7 +485,7 @@
                                 <i class="bi bi-file-earmark-text"></i>
                             </div>
                             <h3 class="why-choose-konten-title">Easy Booking</h3>
-                            <p class="why-choose-konten-description">Proses pemesanan yang mudah dan cepat dengan sistem online yang user-friendly untuk perjalanan wisata impian Anda</p>
+                            <p class="why-choose-konten-description">Simple and fast booking process with a user-friendly online system for your dream vacation</p>
                         </div>
                     </div>
                 </div>
@@ -458,7 +497,7 @@
                                 <i class="bi bi-cash-stack"></i>
                             </div>
                             <h3 class="why-choose-konten-title">Value for Money</h3>
-                            <p class="why-choose-konten-description">Harga terbaik dan kompetitif dengan berbagai paket wisata hemat yang memberikan nilai maksimal untuk liburan Anda</p>
+                            <p class="why-choose-konten-description">Best and competitive prices with various budget-friendly travel packages that provide maximum value for your vacation</p>
                         </div>
                     </div>
                 </div>
@@ -470,7 +509,7 @@
                                 <i class="bi bi-clock-history"></i>
                             </div>
                             <h3 class="why-choose-konten-title">24/7 Customer Support</h3>
-                            <p class="why-choose-konten-description">Layanan bantuan pelanggan siap sedia 24 jam setiap hari untuk memastikan perjalanan Anda berjalan lancar dan nyaman</p>
+                            <p class="why-choose-konten-description">Customer support service available 24 hours a day to ensure your journey runs smoothly and comfortably</p>
                         </div>
                     </div>
                 </div>
@@ -482,7 +521,7 @@
                                 <i class="bi bi-shield-check"></i>
                             </div>
                             <h3 class="why-choose-konten-title">Safe & Trusted</h3>
-                            <p class="why-choose-konten-description">Dipercaya ribuan pelanggan dengan jaminan keamanan transaksi dan perlindungan perjalanan untuk ketenangan pikiran Anda</p>
+                            <p class="why-choose-konten-description">Trusted by thousands of customers with guaranteed transaction security and travel protection for your peace of mind</p>
                         </div>
                     </div>
                 </div>
@@ -498,7 +537,7 @@
                     <h2>PLACES TO VISIT</h2>
                 </div>     
             </div>
-            <!-- baris kesatuk -->
+            
             <div class="row justify-content-center text-center g-4">
 
                 <div class="col-12 col-md-6 col-lg-3 d-flex">
@@ -507,7 +546,7 @@
                             <img src="images/david-kohler-VFRTXGw1VjU-unsplash.jpg" class="card-img-top" alt="Rome image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Rome</h5>
-                                <p class="card-text flex-grow-1">Rome is the Eternal City where ancient Roman ruins, Renaissance masterpieces, and vibrant modern Italian life converge in a living museum that has served as the heart of Western civilization for nearly three millennia.<hr><strong>Rp. 7.999.000</strong></p>
+                                <p class="card-text flex-grow-1">Rome is the Eternal City where ancient Roman ruins, Renaissance masterpieces, and vibrant modern Italian life converge in a living museum that has served as the heart of Western civilization for nearly three millennia.<hr><strong>IDR 7,999,000</strong></p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
                                 </button>
@@ -523,7 +562,7 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Eiffel Tower</h5>
                                 <p class="card-text flex-grow-1">
-                                        The Eiffel Tower is located in Paris, France, on the Champ de Mars park in the city's 7th arrondissement, at the address 5 Avenue Anatole France.<hr><strong>Rp. 999.000</strong>
+                                        The Eiffel Tower is located in Paris, France, on the Champ de Mars park in the city's 7th arrondissement, at the address 5 Avenue Anatole France.<hr><strong>IDR 999,000</strong>
                                 </p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
@@ -539,7 +578,7 @@
                             <img src="images/fuji_mountain.jpg" class="card-img-top" alt="Fuji Mountain image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Fuji Mountain</h5>
-                                <p class="card-text flex-grow-1">Mount Fuji is a towering, iconic volcano located on the island of Honshu, Japan, straddling the prefectures of Yamanashi and Shizuoka.<hr><strong>Rp. 2.300.000</strong></p>
+                                <p class="card-text flex-grow-1">Mount Fuji is a towering, iconic volcano located on the island of Honshu, Japan, straddling the prefectures of Yamanashi and Shizuoka.<hr><strong>IDR 2,300,000</strong></p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
                                 </button>
@@ -551,11 +590,11 @@
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
                     <div data-aos="fade-up-left" data-aos-anchor-placement="center-bottom">
                         <div class="card h-100 shadow-sm border-0 flex-fill">
-                            <img src="images/eddie-kiszka-rFESpq5MMTg-unsplash.jpg" class="card-img-top" alt="Mahcu Picchu image">
+                            <img src="images/eddie-kiszka-rFESpq5MMTg-unsplash.jpg" class="card-img-top" alt="Machu Picchu image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Machu Picchu</h5>
                                 <p class="card-text flex-grow-1">
-                                    Machu Picchu is a breathtaking 15th-century Inca citadel perched high in the Peruvian Andes, featuring remarkable stone architecture that blends seamlessly with dramatic mountain peaks and clouds, making it one of the world's most iconic archaeological wonders.<hr><strong>Rp. 1.270.000</strong>
+                                    Machu Picchu is a breathtaking 15th-century Inca citadel perched high in the Peruvian Andes, featuring remarkable stone architecture that blends seamlessly with dramatic mountain peaks and clouds, making it one of the world's most iconic archaeological wonders.<hr><strong>IDR 1,270,000</strong>
                                 </p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
@@ -569,7 +608,7 @@
             
             
 
-            <!-- Baris Keduak -->
+    
             <div class="row justify-content-center text-center g-4 mt-5">
 
                 <div class="col-12 col-lg-3 col-md-6 d-flex">
@@ -578,7 +617,7 @@
                             <img src="images/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" class="card-img-top" alt="Bali image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Bali</h5>
-                                <p class="card-text flex-grow-1">Bali is Indonesia's enchanting "Island of the Gods" where emerald rice terraces, ancient Hindu temples, pristine beaches, and a rich artistic culture combine with warm Balinese hospitality to create a tropical paradise that captivates millions of visitors each year.<hr><strong>Rp. 899.000</strong></p>
+                                <p class="card-text flex-grow-1">Bali is Indonesia's enchanting "Island of the Gods" where emerald rice terraces, ancient Hindu temples, pristine beaches, and a rich artistic culture combine with warm Balinese hospitality to create a tropical paradise that captivates millions of visitors each year.<hr><strong>IDR 899,000</strong></p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
                                 </button>
@@ -594,7 +633,7 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Taj Mahal</h5>
                                 <p class="card-text flex-grow-1">
-                                    The Taj Mahal is a stunning white marble mausoleum built by Mughal Emperor Shah Jahan in the 17th century as an eternal monument of love for his wife Mumtaz Mahal, renowned worldwide for its perfect symmetry, intricate craftsmanship, and ethereal beauty that changes with the light of day.<hr><strong>Rp. 1.000.000</strong>
+                                    The Taj Mahal is a stunning white marble mausoleum built by Mughal Emperor Shah Jahan in the 17th century as an eternal monument of love for his wife Mumtaz Mahal, renowned worldwide for its perfect symmetry, intricate craftsmanship, and ethereal beauty that changes with the light of day.<hr><strong>IDR 1,000,000</strong>
                                 </p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
@@ -610,7 +649,7 @@
                             <img src="images/omer-nezih-gerek-ZZnH4GOzDgc-unsplash.jpg" class="card-img-top" alt="Grand Canyon image">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Grand Canyon</h5>
-                                <p class="card-text flex-grow-1">The Grand Canyon is a massive geological marvel carved by the Colorado River over millions of years, stretching 277 miles long and up to a mile deep, revealing stunning layers of colorful rock formations that tell Earth's ancient history and offer some of the most awe-inspiring vistas in the world.<hr><strong>Rp. 799.000</strong></p>
+                                <p class="card-text flex-grow-1">The Grand Canyon is a massive geological marvel carved by the Colorado River over millions of years, stretching 277 miles long and up to a mile deep, revealing stunning layers of colorful rock formations that tell Earth's ancient history and offer some of the most awe-inspiring vistas in the world.<hr><strong>IDR 799,000</strong></p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
                                 </button>
@@ -626,7 +665,7 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Santorini</h5>
                                 <p class="card-text flex-grow-1">
-                                    Santorini is a stunning volcanic island in the Aegean Sea famous for its dramatic cliffside villages with whitewashed buildings and blue-domed churches, spectacular sunsets over the caldera, and breathtaking views that make it one of Greece's most romantic and photographed destinations.<hr><strong>Rp. 732.000</strong>
+                                    Santorini is a stunning volcanic island in the Aegean Sea famous for its dramatic cliffside villages with whitewashed buildings and blue-domed churches, spectacular sunsets over the caldera, and breathtaking views that make it one of Greece's most romantic and photographed destinations.<hr><strong>IDR 732,000</strong>
                                 </p>
                                 <button class="btn btn-warning btn-kuning" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                     Book Now
@@ -647,27 +686,27 @@
                 <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold text-warning mb-3">
                     <img src="images/logo.png" alt="Logo" width="35" class="me-2">BEYOND TRAVEL</h5>
-                    <p class="text-secondary">Nikmati pengalaman wisata terbaik bersama kami dan jelajahi dunia dengan kenyamanan dan kepercayaan penuh.</p>
+                    <p class="text-secondary">Enjoy the best travel experience with us and explore the world with complete comfort and trust.</p>
                 </div>
 
                 <div class="col-lg-2 col-md-6">
                     <h6 class="fw-semibold mb-3 text-warning">Menu</h6>
                     <ul class="list-unstyled">
                     <li><a href="#home-page" class="text-dark text-decoration-none hover-warning d-block py-1">Home</a></li>
-                    <li><a href="#destinasi" class="text-dark text-decoration-none hover-warning d-block py-1">Destinasi</a></li>
+                    <li><a href="#destinasi" class="text-dark text-decoration-none hover-warning d-block py-1">Destinations</a></li>
                     <li><a href="#why-choose" class="text-dark text-decoration-none hover-warning d-block py-1">Why Choose Us?</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h6 class="fw-semibold mb-3 text-warning">Kontak Kami</h6>
+                    <h6 class="fw-semibold mb-3 text-warning">Contact Us</h6>
                     <p class="mb-1"><i class="bi bi-geo-alt text-warning me-2"></i> Lampung, Indonesia</p>
                     <p class="mb-1"><i class="bi bi-envelope text-warning me-2"></i> info@beyondtravel.id</p>
                     <p><i class="bi bi-phone text-warning me-2"></i> +62 888 8888 8888</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h6 class="fw-semibold mb-3 text-warning">Ikuti Kami</h6>
+                    <h6 class="fw-semibold mb-3 text-warning">Follow Us</h6>
                     <div class="d-flex gap-3">
                         <a href="https://web.facebook.com/login/device-based/regular/login/?login_attempt=1&locale=id_ID&_rdc=1&_rdr#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
@@ -685,6 +724,7 @@
             </div>
         </div>
     </footer>
+
     
 
 
@@ -699,6 +739,9 @@
             mirror: false,
             startEvent: 'load'
         });
+
+
+        
 
        
        
